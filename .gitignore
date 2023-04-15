@@ -127,3 +127,4 @@ dmypy.json
 # My ignores
 config.json
 private_config.json
+*.sqlite
