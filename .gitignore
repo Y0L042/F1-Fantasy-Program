@@ -128,3 +128,4 @@ dmypy.json
 config.json
 private_config.json
 *.sqlite
+/cache
