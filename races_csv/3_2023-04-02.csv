@@ -1,0 +1,21 @@
+,DriverNumber,BroadcastName,Abbreviation,TeamName,TeamColor,FirstName,LastName,FullName,Position,GridPosition,Q1,Q2,Q3,Time,Status,Points
+1,1,M VERSTAPPEN,VER,Red Bull Racing,3671C6,Max,Verstappen,Max Verstappen,1.0,1.0,,,,0 days 02:32:38.371000,Finished,25.0
+44,44,L HAMILTON,HAM,Mercedes,6CD3BF,Lewis,Hamilton,Lewis Hamilton,2.0,3.0,,,,0 days 02:32:38.550000,Finished,18.0
+14,14,F ALONSO,ALO,Aston Martin,358C75,Fernando,Alonso,Fernando Alonso,3.0,4.0,,,,0 days 02:32:39.140000,Finished,15.0
+18,18,L STROLL,STR,Aston Martin,358C75,Lance,Stroll,Lance Stroll,4.0,6.0,,,,0 days 02:32:41.453000,Finished,12.0
+11,11,S PEREZ,PER,Red Bull Racing,3671C6,Sergio,Perez,Sergio Perez,5.0,0.0,,,,0 days 02:32:41.691000,Finished,11.0
+4,4,L NORRIS,NOR,McLaren,F58020,Lando,Norris,Lando Norris,6.0,13.0,,,,0 days 02:32:42.072000,Finished,8.0
+27,27,N HULKENBERG,HUL,Haas F1 Team,B6BABD,Nico,Hulkenberg,Nico Hulkenberg,7.0,10.0,,,,0 days 02:32:43.310000,Finished,6.0
+81,81,O PIASTRI,PIA,McLaren,F58020,Oscar,Piastri,Oscar Piastri,8.0,16.0,,,,0 days 02:32:43.753000,Finished,4.0
+24,24,G ZHOU,ZHO,Alfa Romeo,C92D4B,Guanyu,Zhou,Guanyu Zhou,9.0,17.0,,,,0 days 02:32:44.084000,Finished,2.0
+22,22,Y TSUNODA,TSU,AlphaTauri,5E8FAA,Yuki,Tsunoda,Yuki Tsunoda,10.0,12.0,,,,0 days 02:32:44.423000,Finished,1.0
+77,77,V BOTTAS,BOT,Alfa Romeo,C92D4B,Valtteri,Bottas,Valtteri Bottas,11.0,0.0,,,,0 days 02:32:44.884000,Finished,0.0
+55,55,C SAINZ,SAI,Ferrari,F91536,Carlos,Sainz,Carlos Sainz,12.0,5.0,,,,0 days 02:32:44.965000,Finished,0.0
+10,10,P GASLY,GAS,Alpine,2293D1,Pierre,Gasly,Pierre Gasly,13.0,9.0,,,,,Collision,0.0
+31,31,E OCON,OCO,Alpine,2293D1,Esteban,Ocon,Esteban Ocon,14.0,11.0,,,,,Collision,0.0
+21,21,N DE VRIES,DEV,AlphaTauri,5E8FAA,Nyck,De Vries,Nyck De Vries,15.0,15.0,,,,,Collision,0.0
+2,2,L SARGEANT,SAR,Williams,37BEDD,Logan,Sargeant,Logan Sargeant,16.0,18.0,,,,,Collision,0.0
+20,20,K MAGNUSSEN,MAG,Haas F1 Team,B6BABD,Kevin,Magnussen,Kevin Magnussen,17.0,14.0,,,,,Accident,0.0
+63,63,G RUSSELL,RUS,Mercedes,6CD3BF,George,Russell,George Russell,18.0,2.0,,,,,Engine,0.0
+23,23,A ALBON,ALB,Williams,37BEDD,Alexander,Albon,Alexander Albon,19.0,8.0,,,,,Accident,0.0
+16,16,C LECLERC,LEC,Ferrari,F91536,Charles,Leclerc,Charles Leclerc,20.0,7.0,,,,,Collision,0.0
