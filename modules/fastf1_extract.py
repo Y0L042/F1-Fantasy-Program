@@ -6,6 +6,9 @@ import glob
 import fastf1
 from datetime import datetime
 
+# Events are Weekends, Sessions are the races that takes place on Weekends
+
+
 def hello_world():
 	print('Hello World!')
 	return True
@@ -55,10 +58,11 @@ def get_session_data(season, event_num, session_type):
 
 
 # Load the data of all the completed sessions
-def get_completed_sessions(season, completed_events, session_type):
+def get_completed_races(season):
     # Initialize an empty list to store completed sessions
-    completed_sessions = []
-
+    session_type = 'R'
+    completed_sessions = []	
+    completed_events = get_completed_events(season)
     # Loop through the completed_events list, using the enumerate function to keep track of the index
     for i, event in enumerate(completed_events):
         # Get the session data for the current event and append it to the list of completed sessions
