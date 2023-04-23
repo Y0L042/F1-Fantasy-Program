@@ -129,3 +129,6 @@ config.json
 private_config.json
 *.sqlite
 /cache
+backend/python_business_logic/cache/
+
+backend/python_business_logic/.vscode/

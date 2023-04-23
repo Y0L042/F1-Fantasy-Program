@@ -38,7 +38,7 @@ def insert_into_teams(cursor, data_row):
 		'''
 		cursor.execute(teams_insert_query, 
 			(
-				data_row.iloc[:,0], 
+				data_row[0], 
 			)
 		) #TODO finish it
 		return cursor.lastrowid
@@ -58,7 +58,7 @@ def insert_into_drivers(cursor, data_row, team_id_fk):
 		'''
 		cursor.execute(drivers_insert_query, 
 			(
-				data_row.iloc[:,0], 
+				data_row[0], 
 				team_id_fk
 			)
 		)
@@ -68,46 +68,106 @@ def insert_into_drivers(cursor, data_row, team_id_fk):
 		raise
 
 
-# race table
-def insert_into_race(cursor, data_row, circuit_id_fk):
+# races table
+def insert_into_races(cursor, row_data):
 	try:
 		race_insert_query = '''
-			INSERT INTO race
-			(race_name, date, location)
-			VALUES (%s, %s, %s)
+			INSERT INTO races
+			(race_name, date, round_number, country, location)
+			VALUES (%s, %s, %s, %s, %s)
 		'''
+
 		cursor.execute(race_insert_query, 
-			(
-				data_row.iloc[:,0], 
-				data_row.iloc[:,1], 
-				data_row.iloc[:,2],
-			)
-		)
+            (
+                row_data['EventName'],
+                row_data['EventDate'],
+                row_data['RoundNumber'],
+                row_data['Country'],
+                row_data['Location']
+            )
+        )
 		return cursor.lastrowid
 	except Exception as e:
-		print(f"Error occurred while inserting into race: {e}")
+		print(f"Error occurred while inserting into races: {e}")
 		raise
 
-# race_results table
-def insert_into_race_results(cursor, data_row, race_id_fk, driver_id_fk, team_id_fk):
-	try:
-		race_results_insert_query = '''
-			INSERT INTO race_results
-			(driver_shortname, start_pos, finish_pos, fastest_lap, drivers_driver_id, teams_team_id, races_race_id)
-			VALUES (%s, %s, %s, %s, %s, %s)
-		'''
-		cursor.execute(race_results_insert_query, 
-			(
-				data_row.iloc[:,0], 
-				data_row.iloc[:,1], 
-				data_row.iloc[:,2], 
-				driver_id_fk,
-				team_id_fk,
-				race_id_fk
-			)
-		)
-		return cursor.lastrowid
-	except Exception as e:
-		print(f"Error occurred while inserting into race_results: {e}")
-		raise
 
+
+def insert_into_race_results(cursor, row_data, driver_id_fk, team_id_fk, race_id_fk):
+    try:
+        race_results_insert_query = '''
+            INSERT INTO race_results
+            (driver_shortname, start_pos, finish_pos, fastest_lap, points, drivers_driver_id, teams_team_id, races_race_id)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        '''
+        cursor.execute(race_results_insert_query,
+            (
+                row_data['Abbreviation'],
+                row_data['GridPosition'],
+                row_data['Position'],
+                row_data['FastestLap'],
+                row_data['Points'],
+                driver_id_fk,
+                team_id_fk,
+                race_id_fk
+            )
+        )
+        return cursor.lastrowid
+    except Exception as e:
+        print(f"Error occurred while inserting into race_results: {e}")
+        raise
+
+
+
+def get_driver_id_fk(cursor, driver_abbreviation):
+    try:
+        select_driver_query = '''
+            SELECT driver_id
+            FROM drivers
+            WHERE driver_shortname = %s
+        '''
+        cursor.execute(select_driver_query, (driver_abbreviation,))
+        result = cursor.fetchone()
+        if result:
+            return result[0]
+        else:
+            return None
+    except Exception as e:
+        print(f"Error occurred while selecting from drivers: {e}")
+        raise
+
+
+def get_team_id_by_driver_id_fk(cursor, driver_id):
+    try:
+        select_team_query = '''
+            SELECT teams_team_id
+            FROM drivers
+            WHERE driver_id = %s
+        '''
+        cursor.execute(select_team_query, (driver_id,))
+        result = cursor.fetchone()
+        if result:
+            return result[0]
+        else:
+            return None
+    except Exception as e:
+        print(f"Error occurred while selecting from drivers: {e}")
+        raise
+
+def get_latest_race_id_fk(cursor):
+    try:
+        select_race_query = '''
+            SELECT race_id
+            FROM races
+            ORDER BY race_id DESC
+            LIMIT 1
+        '''
+        cursor.execute(select_race_query)
+        result = cursor.fetchone()
+        if result:
+            return result[0]
+        else:
+            return None
+    except Exception as e:
+        print(f"Error occurred while selecting from races: {e}")
+        raise
