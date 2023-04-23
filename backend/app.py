@@ -7,15 +7,13 @@ from python_business_logic import business_logic as pbl
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello, world!'
+
 
 
 
 # Create a 'private_config.json' file, and add the details of your database there.
 def connect_to_database():
-	with open('private_config.json', 'r') as file:
+	with open('python_business_logic/private_config.json', 'r') as file:
 		config_data = json.load(file)
 
 
@@ -27,6 +25,13 @@ def connect_to_database():
 	)
 
 	return mydb
+
+
+
+@app.route('/')
+def hello_world():
+    return 'Hello, world! Its me, mariao'
+
 
 
 @app.route('/db')
