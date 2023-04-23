@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./backend/python_business_logic",
+        "./backend/python_business_logic/modules"
+    ]
+}

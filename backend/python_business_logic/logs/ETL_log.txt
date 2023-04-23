@@ -132,3 +132,16 @@
 2023-Apr-23-10:40:11,Load Finished
 2023-Apr-23-10:41:06,Extract Started
 2023-Apr-23-10:41:06,Latest Race Already Loaded
+2023-Apr-23-11:01:02,Extract Started
+2023-Apr-23-11:01:02,Latest Race Already Loaded
+2023-Apr-23-14:36:30,Extract Started
+2023-Apr-23-14:47:09,Extract Started
+2023-Apr-23-14:48:59,Extract Started
+2023-Apr-23-14:49:32,Extract Started
+2023-Apr-23-14:49:32,Latest Race Already Loaded
+2023-Apr-23-15:05:19,Extract Started
+2023-Apr-23-15:05:20,Latest Race Already Loaded
+2023-Apr-23-15:10:04,Extract Started
+2023-Apr-23-15:10:04,Latest Race Already Loaded
+2023-Apr-23-15:11:28,Extract Started
+2023-Apr-23-15:11:29,Latest Race Already Loaded
