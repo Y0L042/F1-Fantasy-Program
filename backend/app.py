@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import mysql.connector
 import json
 from python_business_logic import business_logic as pbl
@@ -6,6 +7,7 @@ from python_business_logic import business_logic as pbl
 
 
 app = Flask(__name__)
+CORS(app) # Enable CORS for the Flask app -> CORS (Cross-Origin Resource Sharing)
 
 
 
