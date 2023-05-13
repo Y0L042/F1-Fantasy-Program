@@ -1,0 +1,13 @@
+__pycache__
+.vscode
+cache
+chromedriver_win32
+logs/*
+modules/__pycache__
+MySQL
+races_csv/*
+transformed_race_csv/*
+main.ipynb
+testing.ipynb
+.env
+# private_config.json

@@ -145,3 +145,8 @@
 2023-Apr-23-15:10:04,Latest Race Already Loaded
 2023-Apr-23-15:11:28,Extract Started
 2023-Apr-23-15:11:29,Latest Race Already Loaded
+2023-May-02-21:08:31,Extract Started
+2023-May-02-21:09:02,Extract Finished
+2023-May-02-21:09:02,Transform Started
+2023-May-02-21:09:02,Transform Finished
+2023-May-02-21:09:02,Load Started

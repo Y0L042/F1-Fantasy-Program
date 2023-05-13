@@ -1,4 +1,5 @@
 import mysql.connector
+import os
 import requests
 import json
 import glob
@@ -6,22 +7,38 @@ import csv
 
 
 
-# Create a 'private_config.json' file, and add the details of your database there.
+# # Create a 'private_config.json' file, and add the details of your database there.
+# def connect_to_database():
+# 	with open('private_config.json', 'r') as file:
+# 		config_data = json.load(file)
+
+
+# 	mydb = mysql.connector.connect(
+# 	host=config_data['db_host'],
+# 	user=config_data['db_user'],
+# 	password=config_data['db_password'],
+# 	database=config_data['db_database']
+# 	)
+
+# 	return mydb
+
 def connect_to_database():
-	with open('private_config.json', 'r') as file:
-		config_data = json.load(file)
+    db_host = os.environ.get('DB_HOST')
+    db_port = os.environ.get('DB_PORT')
+    db_user = os.environ.get('DB_USER')
+    db_password = os.environ.get('DB_PASSWORD')
+    db_database = os.environ.get('DB_DATABASE')
 
+    # print(db_host,' ',db_user,' ',db_password, ' ',db_database)
 
-	mydb = mysql.connector.connect(
-	host=config_data['db_host'],
-	user=config_data['db_user'],
-	password=config_data['db_password'],
-	database=config_data['db_database']
-	)
+    mydb = mysql.connector.connect(
+        host=db_host,
+        user=db_user,
+        password=db_password,
+        database=db_database
+    )
 
-	return mydb
-
-
+    return mydb
 
 
 # Insert Functions

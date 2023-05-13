@@ -4,7 +4,7 @@ import fastf1
 import pandas as pd
 import mysql.connector
 
-from .modules import f1stats_database as f1db
+import f1stats_database as f1db
 
 
 import os
@@ -56,7 +56,10 @@ def get_loaded_races_from_database(cursor):
 
 def extract_races_from_fastf1():
     # Enable cache
-    fastf1.Cache.enable_cache('backend/python_business_logic/cache')
+    # try:
+    #     fastf1.Cache.enable_cache('backend/python_business_logic/cache')
+    # except Exception as e:
+    #     pass
 
     # Get completed events for a specific season
     global season 
@@ -207,6 +210,9 @@ def extract_transform_load():
     #-------------------------------------------------------------------------------------------------------
     # Load
     log('Load Started')
-    # load_data_to_database(df_transformed_race_results, df_transformed_circuit_info)
-    print('Loading...')
+    load_data_to_database(df_transformed_race_results, df_transformed_circuit_info)
+    # print('Loading...')
     log('Load Finished')
+
+
+# extract_transform_load()
