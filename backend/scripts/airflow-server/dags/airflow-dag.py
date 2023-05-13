@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-from business_logic import extract_races_from_fastf1, extract_circuit_from_fastf1, transform_race_results, transform_circuit_info, load_data_to_database
+from app.etl import extract_races_from_fastf1, extract_circuit_from_fastf1, transform_race_results, transform_circuit_info, load_data_to_database
 
 def log(message):
     timestamp_format = '%Y-%h-%d-%H:%M:%S' #Year-Monthname-Day-Hour-Minute-Second
