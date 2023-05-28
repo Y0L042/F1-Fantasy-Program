@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import mysql.connector
 import json
-from python_business_logic import business_logic as pbl
+# from airflow_docker import business_logic as pbl
 
 
 
@@ -12,10 +12,9 @@ CORS(app) # Enable CORS for the Flask app -> CORS (Cross-Origin Resource Sharing
 
 
 
-
 # Create a 'private_config.json' file, and add the details of your database there.
 def connect_to_database():
-	with open('python_business_logic/private_config.json', 'r') as file:
+	with open('private_config.json', 'r') as file:
 		config_data = json.load(file)
 
 

@@ -10,4 +10,4 @@ transformed_race_csv/*
 main.ipynb
 testing.ipynb
 .env
-# private_config.json
+private_config.json

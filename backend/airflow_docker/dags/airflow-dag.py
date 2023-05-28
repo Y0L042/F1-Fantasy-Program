@@ -1,14 +1,17 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
+
+import sys
+sys.path.append("..")
 from app.etl import extract_races_from_fastf1, extract_circuit_from_fastf1, transform_race_results, transform_circuit_info, load_data_to_database
 
-def log(message):
-    timestamp_format = '%Y-%h-%d-%H:%M:%S' #Year-Monthname-Day-Hour-Minute-Second
-    now = datetime.now()
-    timestamp = now.strftime(timestamp_format)
-    with open("ETL_log.txt", 'a') as log: #os.path.join(LOGS_DIR, 
-        log.write(timestamp + ','+str(message)+'\n')
+# def log(message):
+#     timestamp_format = '%Y-%h-%d-%H:%M:%S' #Year-Monthname-Day-Hour-Minute-Second
+#     now = datetime.now()
+#     timestamp = now.strftime(timestamp_format)
+#     with open("ETL_log.txt", 'a') as log: #os.path.join(LOGS_DIR, 
+#         log.write(timestamp + ','+str(message)+'\n')
 
 # Extract task function
 def extract_task():
@@ -61,7 +64,7 @@ dag = DAG(
     'f1_fantasy_etl',
     default_args=default_args,
     description='F1 Fantasy ETL',
-    schedule_interval=timedelta(days=1),
+    schedule_interval=timedelta(days=15),
     catchup=False,
 )
 

@@ -2,5 +2,10 @@
     "python.analysis.extraPaths": [
         "./backend/python_business_logic",
         "./backend/python_business_logic/modules"
-    ]
+    ],
+    "dart.previewFlutterUiGuidesCustomTracking": true,
+    "editor.guides.bracketPairs": true,
+    "dart.previewFlutterUiGuides": true,
+    "editor.lineHeight": 20,
+    "editor.fontSize": 14
 }
