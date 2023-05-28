@@ -133,3 +133,5 @@ backend/python_business_logic/cache/
 
 backend/python_business_logic/.vscode/
 *.ps1
+
+backend/airflow_docker/logs/scheduler/
